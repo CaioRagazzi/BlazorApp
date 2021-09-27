@@ -7,3 +7,45 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+<p>
+    Employee name: @employee.Name
+</p>
+
+<p>
+    Employee department: @employee.Department.Name
+</p>
+
+@code {
+    Employee employee = null;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        employee = new Employee
+            {
+                Age = 32,
+                Department = new Department { Id = 1, Name = "Test" },
+                Id = 1,
+                IsActive = true,
+                Name = "Caio"
+            };
+    }
+
+    class Employee
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public Department Department { get; set; }
+        public bool IsActive { get; set; }
+    }
+
+    class Department
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+
+}

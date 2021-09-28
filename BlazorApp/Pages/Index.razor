@@ -9,6 +9,8 @@ Welcome to your new app.
 <SurveyPrompt Title="How is Blazor working for you?" />
 
 <div>
+    <input type="text" name="nome" @bind-value="@employee.Name" @bind-value:event="oninput"/>
+
     <p>
     Employee name: @employee.Name
     </p>
